@@ -31,6 +31,52 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
 ### `npm run eject`
 
+// Sample Codes
+function ConfirmLeave() {
+  localStorage.setItem("Abhishekkk", "kskkss")
+}
+onmouseover =  ()  => {
+    window.onbeforeunload = null
+  }
+onmouseout = () => {
+    window.onbeforeunload = () => {
+      const localStorageTime = localStorage.getItem('storagetime')
+      if (localStorageTime !== null && localStorageTime !== undefined) {
+        const currentTime = new Date().getTime(),
+           timeDifference = currentTime - localStorageTime
+      localStorage.setItem("jdfkd", timeDifference)
+        if (timeDifference < 25000) { //Browser Closed
+           localStorage.removeItem('storagetime')
+           ConfirmLeave()
+        } else { //Browser Tab Closed
+           localStorage.setItem('storagetime', new Date().getTime())
+  localStorage.setItem("Tab Closed", "Else")
+
+           console.log("Else Called")
+        }
+    
+      } else {
+        localStorage.setItem('storagetime', new Date().getTime())
+  localStorage.setItem("ElseElse", "Else Else")
+
+        console.log("Else Else Called")
+      }
+    }
+  }
+  let prevKey = ""
+ onkeydown = (e) => {   
+  console.log("e", e)   
+   if (e.key !== undefined) {   
+   if (e.key.toUpperCase() === "E" && prevKey === "CONTROL") {                
+        window.onbeforeunload = ConfirmLeave
+   } else if (e && e.key.toUpperCase() === "F4" && (prevKey === "ALT" || prevKey === "CONTROL")) {
+        window.onbeforeunload = ConfirmLeave
+    }
+    prevKey = e.key.toUpperCase()
+  }
+}
+
+
 **Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
 If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
